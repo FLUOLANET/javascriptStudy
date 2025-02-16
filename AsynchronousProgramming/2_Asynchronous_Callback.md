@@ -1,17 +1,17 @@
 ## #1 콜백함수(Callback)
 
-콜백함수: 다른 함수의 인자로 전달되는 함수
+`콜백함수`: 다른 함수의 인자로 전달되는 함수
 
 ```js title:Callback
 // 함수를 정의할건데 인자로 콜백함수(어떤 함수) 받을거임
 function anNyong(anyFunction) { 
-    console.log("안녕");
+    console.log('안녕');
     anyFunction();
 }
 
 //그 콜백함수(어떤 함수) 정의
 function haSeYo() {
-    console.log("하세요");
+    console.log('하세요');
 }
   
 anNyong(haSeYo);
@@ -19,12 +19,12 @@ anNyong(haSeYo);
 
 ```js title:"Callback - Arrow 함수 버전"
 const anNyong = (anyFunction) => {
-	console.log("안녕");
+	console.log('안녕');
 	anyFunction();
 }
 
 const haSeYo = () => {
-	console.log("하세요");
+	console.log('하세요');
 }
 
 anNyong(haSeYo);
@@ -32,8 +32,8 @@ anNyong(haSeYo);
 
 ## #2 비동기 콜백
 
-비동기 콜백: 비동기 처리에 사용되는 콜백함수
-- 비동기 작업이 끝나고 후처리에 사용
+`비동기 콜백`: `비동기 처리`에 사용되는 `콜백함수`
+- `비동기 작업`이 끝나고 후처리에 사용
 - ex) 어떤 데이터 받아오는 작업 완료되면 그 데이터 보여줌
 
 ```js title:"이러면 원하는대로 안됨"
@@ -67,12 +67,10 @@ console.log('흐흐흐');
 
 ## #3 콜백지옥
 
- A작업 -> 3초 타이머 -> B작업 -> 3초 타이머 -> C작업 -> 3초 타이머  -> D작업 
- 
- 이런식으로 비동기 작업을 여러 개 순차적으로 하려면 콜백함수 계속 사용해야..
- -> 코드의 가독성이 매우매우 떨어짐. 
- 
- 이런 상황을 콜백지옥이라고 함.
+- A작업 -> 3초 타이머 -> B작업 -> 3초 타이머 -> C작업 -> 3초 타이머  -> D작업 
+-  이런식으로 `비동기 작업`을 여러 개 순차적으로 하려면 `콜백함수` 계속 사용해야..
+   -> 코드의 가독성이 매우매우 떨어짐. 
+- 이런 상황을 `콜백지옥`이라고 함.
 
 ```js title:콜백지옥
 function firstTask(callback) {
@@ -103,4 +101,4 @@ firstTask(() => {
 ```
 
 이렇게 쓰면 나중에 유지/보수할 때 고통스러움. 
-이걸 해결하는게 Promise.
+이걸 해결하는게 `Promise`
